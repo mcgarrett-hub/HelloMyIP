@@ -20,7 +20,7 @@ export const MAIN_NAV: NavItem[] = [
   { href: "/ssl-checker", label: "SSL Checker", badge: "soon" },
   { href: "/http-headers", label: "HTTP Headers", badge: "soon" },
   { href: "/website-down", label: "Website Down", badge: "soon" },
-  { href: "/speed-test", label: "Speed Test", badge: "soon" },
+  { href: "/speed-test", label: "Speed Test" },
   { href: "/tools", label: "More Tools", labelVi: "Công cụ khác", badge: "soon" },
   { href: "/blog", label: "Blog", labelVi: "Blog", badge: "mvp" },
   { href: "/api-docs", label: "API", badge: "mvp" },
