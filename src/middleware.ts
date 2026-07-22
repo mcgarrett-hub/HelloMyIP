@@ -9,7 +9,7 @@ import { resolveClientIp } from "@/lib/client-ip";
 export function middleware(request: NextRequest) {
   const visitorIp = resolveClientIp({
     headers: request.headers,
-    ip: request.ip ?? null,
+    ip: request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? null,
   });
 
   const requestHeaders = new Headers(request.headers);

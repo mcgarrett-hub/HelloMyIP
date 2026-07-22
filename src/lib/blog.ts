@@ -5,7 +5,13 @@ import { BLOG_POSTS } from "@/lib/constants";
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "blog");
 
-export type BlogPostMeta = (typeof BLOG_POSTS)[number];
+export type BlogPostMeta = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+};
+
 export type BlogPost = BlogPostMeta & { content: string };
 
 export function getAllPosts(): BlogPostMeta[] {
