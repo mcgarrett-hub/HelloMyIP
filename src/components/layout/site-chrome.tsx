@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { MAIN_NAV } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { ToolsSidebar } from "./tools-sidebar";
+export { ToolsSidebar };
 
 export function SiteHeader() {
   return (
@@ -40,38 +42,6 @@ export function SiteFooter() {
         <p className="mt-2">© {new Date().getFullYear()} HelloMyIP</p>
       </div>
     </footer>
-  );
-}
-
-export function ToolsSidebar({ activeHref }: { activeHref?: string }) {
-  return (
-    <aside className="hidden w-64 shrink-0 lg:block">
-      <div className="sticky top-20 rounded-xl border border-[var(--border)] bg-[var(--card)] p-3">
-        <p className="px-2 pb-2 text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">
-          Tools
-        </p>
-        <ul className="space-y-0.5">
-          {MAIN_NAV.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className={cn(
-                  "flex items-center justify-between rounded-md px-2 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800",
-                  activeHref === item.href && "bg-brand-50 font-medium text-brand-800 dark:bg-brand-950/50 dark:text-brand-200"
-                )}
-              >
-                <span>{item.label}</span>
-                {item.badge === "soon" && (
-                  <span className="rounded bg-slate-200 px-1.5 py-0.5 text-[10px] uppercase dark:bg-slate-700">
-                    Soon
-                  </span>
-                )}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </aside>
   );
 }
 
